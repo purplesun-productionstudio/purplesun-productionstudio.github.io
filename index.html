@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17102a" />
+    <title>I Bet on Losing Bugs</title>
+    <link rel="icon" type="image/png" href="images/sprites/play.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game" id="game" aria-label="I Bet on Losing Bugs">
+      <section class="menu-screen" id="menuScreen" aria-label="Title screen">
+        <button class="play-button" id="playButton" type="button" aria-label="Play">
+          <img src="images/sprites/play.png" alt="" />
+        </button>
+      </section>
+
+      <section class="story-screen" id="storyScreen" aria-hidden="true">
+        <div class="scene-background" id="sceneBackground"></div>
+        <img
+          class="fighter andy"
+          id="andy"
+          src="images/sprites/andy_squareup.png"
+          alt=""
+          draggable="false"
+          hidden
+        />
+        <img
+          class="moth fighter"
+          id="moth"
+          src="images/sprites/moth_squareup.png"
+          alt=""
+          draggable="false"
+        />
+        <div class="fight-ui" id="fightUI" hidden>
+          <div class="fight-heading">
+            <p>CLICK THE ORANGE CIRCLE</p>
+            <span id="roundLabel" aria-live="polite">ROUND 1/4</span>
+            <span id="fightScore" aria-live="polite">HITS 0 · MISSES 0</span>
+          </div>
+          <div class="target-zone" id="targetZone" aria-label="Fight targets"></div>
+        </div>
+        <div class="textbox" id="textbox" aria-hidden="true"></div>
+        <div
+          class="dialogue-copy"
+          id="dialogueCopy"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <p class="speaker" id="speaker"></p>
+          <p class="dialogue-line" id="dialogueLine"></p>
+        </div>
+      </section>
+
+      <div class="fade-curtain" id="fadeCurtain" aria-hidden="true"></div>
+      <audio
+        id="clubMusic"
+        src="music/party_at_club_bug_muffled.mp3"
+        preload="auto"
+        loop
+      ></audio>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
